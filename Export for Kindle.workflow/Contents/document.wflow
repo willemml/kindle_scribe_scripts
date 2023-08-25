@@ -51,7 +51,8 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}	set pdfpath to POSIX path of input	tell application "System Events"		tell application "Kindle Create"			launch			activate		end tell		tell front window of (application process "Kindle Create")			click button "Create new"			click button "Choose"			click checkbox 3			click button "Choose File  (.pdf)"			repeat until (exists text field "File name:")				delay 0.2			end repeat			set value of text field "File name:" to pdfpath			click button "Open" of group 1			delay 0.5			repeat until (not (exists static text "Importing and converting your document..."))				delay 0.2			end repeat			click button "Export"			repeat until (exists button "Save" of group 1)				delay 0.2			end repeat			click button "Save" of group 1			repeat until (exists button "Show .kpf folder")				delay 0.2			end repeat			click button "Ok"		end tell		tell application "Kindle Create"			repeat while it is running				quit				delay 0.2			end repeat		end tell		((text 1 thru -4 of pdfpath) &amp; "kpf")	end tellend run</string>
+					<string>on run {input, parameters}	set pdfpath to POSIX path of input	tell application "System Events"		tell application "Kindle Create"			launch			activate		end tell		tell front window of (application process "Kindle Create")			click button "Create new"			click button "Choose"			click checkbox 3			click button "Choose File  (.pdf)"			repeat until (exists text field "File name:")				delay 0.2			end repeat			set value of text field "File name:" to pdfpath			click button "Open" of group 1			delay 0.5			repeat until (not (exists static text "Importing and converting your document..."))				delay 0.2			end repeat			click button "Export"			repeat until (exists button "Save" of group 1)				delay 0.2			end repeat			click button "Save" of group 1			repeat until (exists button "Show .kpf folder")				delay 0.2			end repeat			click button "Ok"		end tell
+		tell application process "Kindle Create"			click menu item "Close Project" of menu "File" of menu bar item "File" of menu bar 1		end tell		((text 1 thru -4 of pdfpath) &amp; "kpf")	end tellend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -104,12 +105,10 @@ end run</string>
 						<string>0</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>458.000000:631.000000</string>
+				<string>458.000000:842.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -277,12 +276,10 @@ temp=$1 export kfxfile="${${temp%?}%?}fx"
 						<string>4</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>458.000000:813.000000</string>
+				<string>458.000000:1024.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -292,7 +289,7 @@ temp=$1 export kfxfile="${${temp%?}%?}fx"
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>A7DB6570-6FB8-4444-AB07-4BA177A1AFE8</key>
+		<key>9D59B203-6260-4DF3-AB21-571C9DF1EB54</key>
 		<dict>
 			<key>from</key>
 			<string>E1295C81-FEF5-4032-9595-6C1F3A8F3595 - E1295C81-FEF5-4032-9595-6C1F3A8F3595</string>
